@@ -1,0 +1,378 @@
+/* 
+   WATER ELEMENT LANDING - THE DIVINE GATEWAY
+   Author: Neo | Antigravity
+   Phase: Check Point 10 (Standalone Sibling Architecture)
+*/
+
+:root {
+    --bg-dark: #050a1a;
+    --bg-accent: #0f172a;
+    --gold: #E6B422;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --accent-cyan: #00f2ff;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top center, #1b274c 0%, var(--bg-dark) 100%);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* HEADER TITLES */
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.main-title {
+    font-size: 5rem;
+    font-weight: 900;
+    color: transparent;
+    background: linear-gradient(to bottom, #fff 0%, var(--gold) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    letter-spacing: 12px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px rgba(230, 180, 34, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+/* SECTIONS */
+.section {
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+/* ROW 1 & 3: SCREENSHOT GRID (3 COL) */
+.screenshot-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-end;
+}
+
+.phone-frame {
+    width: 280px;
+    border-radius: 40px;
+    overflow: hidden;
+    border: 8px solid var(--glass-border);
+    background: #000;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+/* 
+   THE CLUSTER DESIGN SYSTEM (3-5-3)
+*/
+.screenshot-cluster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px;
+    perspective: 2000px; /* Enhanced depth */
+}
+
+.cluster-item {
+    border-radius: 30px;
+    overflow: hidden;
+    border: 3px solid var(--glass-border);
+    background: #000;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.cluster-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
+}
+
+/* ROW 1: TRINITY & ROW 3: VAULT (3-Item Arc) */
+.trinity-cluster .cluster-item, .vault-cluster .cluster-item {
+    width: 310px;
+    height: 640px;
+    margin: 0 -15px; /* Wider spacing */
+}
+
+.trinity-cluster .cluster-item:nth-child(1), .vault-cluster .cluster-item:nth-child(1) { transform: rotateY(12deg) scale(0.96); }
+.trinity-cluster .cluster-item:nth-child(3), .vault-cluster .cluster-item:nth-child(3) { transform: rotateY(-12deg) scale(0.96); }
+
+.trinity-cluster .cluster-item:nth-child(2), .vault-cluster .cluster-item:nth-child(2) {
+    z-index: 5;
+    transform: scale(1.08); /* Sophisticated hero scale */
+    border-color: var(--gold);
+    box-shadow: 0 0 50px rgba(230, 180, 34, 0.4);
+}
+.trinity-cluster .cluster-item:nth-child(2) img, .vault-cluster .cluster-item:nth-child(2) img { opacity: 1; }
+
+/* ROW 2: DIVINE ANGELS (5-Item Arc) */
+.row-angels .cluster-item {
+    width: 240px;
+    height: 520px;
+    margin: 0 -10px; /* Wider spacing to reveal more color/content */
+}
+
+.row-angels .cluster-item:nth-child(1) { transform: rotateY(20deg) scale(0.88); }
+.row-angels .cluster-item:nth-child(2) { transform: rotateY(10deg) scale(0.94); }
+.row-angels .cluster-item:nth-child(4) { transform: rotateY(-10deg) scale(0.94); }
+.row-angels .cluster-item:nth-child(5) { transform: rotateY(-20deg) scale(0.88); }
+
+.row-angels .cluster-item:nth-child(3) {
+    z-index: 5;
+    transform: scale(1.1);
+    border-color: var(--gold);
+    box-shadow: 0 0 50px rgba(230, 180, 34, 0.4);
+}
+.row-angels .cluster-item:nth-child(3) img { opacity: 1; }
+
+/* GLOBAL HOVER DYNAMICS */
+.cluster-item:hover {
+    transform: scale(1.2) rotateY(0deg) translateY(-40px) !important;
+    z-index: 25 !important;
+    border-color: var(--gold) !important;
+    box-shadow: 0 0 100px rgba(230, 180, 34, 0.8) !important;
+}
+
+.cluster-item:hover img {
+    opacity: 1 !important;
+}
+
+/* ABOUT & FEATURES */
+.about-section {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-narrative {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 2.5rem;
+    border-radius: 24px;
+    text-align: left;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(230, 180, 34, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(230, 180, 34, 0.2);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card h3 {
+    color: var(--gold);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ACCESS BUTTONS */
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.store-btn {
+    position: relative;
+    overflow: hidden;
+    background: rgba(30, 41, 59, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 25px 40px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    width: 360px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.store-btn:hover {
+    background: var(--gold);
+    color: black;
+    transform: translateY(-5px);
+}
+
+.btn-subtext {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    letter-spacing: 1px;
+}
+
+.btn-maintext {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.beta-ribbon {
+    position: absolute;
+    top: 32px;
+    right: -70px;
+    background: var(--gold);
+    color: black;
+    width: 300px;
+    padding: 4px 0;
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: rotate(45deg);
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 100px;
+    padding-top: 60px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.footer-column h3 {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.footer-column a, .footer-column p {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.footer-column a:hover {
+    color: var(--gold);
+}
+
+.footer-vessel-video {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--glass-border);
+    box-shadow: 0 0 30px rgba(230, 180, 34, 0.3);
+    float: right;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 40px;
+}
+
+.encryption-badge {
+    display: inline-block;
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    opacity: 0.4;
+}
+
+@media (max-width: 900px) {
+    .main-title { font-size: 3rem; letter-spacing: 6px; }
+    .screenshot-grid, .store-buttons, .footer-links { flex-direction: column; align-items: center; }
+    .screenshot-cluster { height: auto; flex-direction: column; }
+    .cluster-item { margin: 20px 0; }
+}
